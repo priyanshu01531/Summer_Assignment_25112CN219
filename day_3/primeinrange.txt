@@ -1,0 +1,36 @@
+//A program to print prime number in a range with comments
+#include<stdio.h>
+int main()
+{
+    int lower, upper, i, flag;
+    printf("Enter the lower and upper bound: ");
+    scanf("%d %d", &lower, &upper);
+    
+    printf("Prime numbers between %d and %d are: ", lower, upper);
+    
+    // Loop through each number in the range
+    for (i = lower; i <= upper; i++) {
+        // Check if the number is less than or equal to 1
+        if (i <= 1) {
+            continue; // Skip numbers less than or equal to 1
+        }
+        
+        flag = 0; // Reset flag for each number
+        
+        // Check for factors from 2 to the square root of i
+        for (int j = 2; j <= i / 2; j++) {
+            if (i % j == 0) {
+                flag = 1; // Set flag to 1 if a factor is found
+                break; // Exit the loop as we found a factor
+            }
+        }
+        
+        // If flag is still 0, then i is prime
+        if (flag == 0) {
+            printf("%d ", i); // Print the prime number
+        }
+    }
+    
+    printf("\n"); // Print a new line after listing all prime numbers
+    return 0;
+}
