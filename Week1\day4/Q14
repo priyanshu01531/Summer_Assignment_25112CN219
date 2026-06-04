@@ -1,0 +1,32 @@
+//Program to find the nth fibonacci term with the comments in the code
+#include<stdio.h>
+int main()
+{
+    int n, first = 0, second = 1, next; // Declare variables to store the number of terms and the first two terms of the series
+    printf("Enter the term number: "); // Prompt the user to enter the term number in the series
+    scanf("%d", &n); // Read the term number from the user
+
+    if (n <= 0) // Check if the input is a non-positive integer
+    {
+        printf("Please enter a positive integer."); // Inform the user to enter a positive integer
+    }
+    else if (n == 1) // If the term number is 1, print the first term of the series
+    {
+        printf("The %dth term in the Fibonacci series is: %d", n, first); // Print the first term
+    }
+    else if (n == 2) // If the term number is 2, print the second term of the series
+    {
+        printf("The %dth term in the Fibonacci series is: %d", n, second); // Print the second term
+    }
+    else
+    {
+        for (int i = 3; i <= n; i++) // Loop to calculate terms from 3 to n
+        {
+            next = first + second; // Calculate the next term by adding the previous two terms
+            first = second; // Update first to be the previous second term
+            second = next; // Update second to be the newly calculated next term
+        }
+        printf("The %dth term in the Fibonacci series is: %d", n, next); // Print the nth term in the series
+    }
+    return 0; 
+}

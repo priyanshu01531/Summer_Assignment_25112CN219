@@ -1,0 +1,23 @@
+//Program to generate the fibonacci series without using recursion and adding comments to the code
+#include<stdio.h>
+int main()
+{
+    int n, first = 0, second = 1, next; // Declare variables to store the number of terms and the first two terms of the series
+    printf("Enter the number of terms: "); // Prompt the user to enter the number of terms in the series
+    scanf("%d", &n); // Read the number of terms from the user
+
+    printf("Fibonacci Series: "); // Print a message indicating that the Fibonacci series will be displayed
+    for (int i = 0; i < n; i++) // Loop to generate and print the Fibonacci series up to n terms
+    {
+        if (i <= 1) // For the first two terms, print them directly
+            next = i; // The next term is equal to the index for the first two terms
+        else
+        {
+            next = first + second; // Calculate the next term by adding the previous two terms
+            first = second; // Update first to be the previous second term
+            second = next; // Update second to be the newly calculated next term
+        }
+        printf("%d ", next); // Print the current term in the series followed by a space
+    }
+    return 0; // Return 0 to indicate that the program ended successfully
+}

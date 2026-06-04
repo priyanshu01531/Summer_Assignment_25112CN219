@@ -1,0 +1,27 @@
+//Program to print the armstrong number in series
+#include<stdio.h>
+int main()
+{
+    int n, num, originalNum, remainder, result; // Declare variables to store the number of terms, the current number, its original value, the remainder, and the result of the calculation
+    printf("Enter the number of terms: "); // Prompt the user to enter the number of terms in the series
+    scanf("%d", &n); // Read the number of terms from the user
+
+    printf("Armstrong numbers in the series: "); // Print a message indicating that Armstrong numbers will be displayed
+    for (int i = 1; i <= n; i++) // Loop through numbers from 1 to n
+    {
+        num = i; // Set num to the current number in the loop
+        originalNum = num; // Store the original number for later comparison
+        result = 0; // Reset result for each new number
+
+        while (originalNum != 0) // Loop until all digits have been processed
+        {
+            remainder = originalNum % 10; // Get the last digit of the number
+            result += remainder * remainder * remainder; // Add the cube of the digit to the result
+            originalNum /= 10; // Remove the last digit from the number
+        }
+
+        if (result == num) // Check if the calculated result is equal to the original number
+            printf("%d ", num); // If true, print that it is an Armstrong number followed by a space
+    }
+    return 0; 
+}
