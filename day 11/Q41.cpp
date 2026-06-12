@@ -11,7 +11,7 @@ int main()
     int num1, num2;
 
     cout << "Enter two numbers: ";
-    cin >> num1 >> num2;
+    cin >> num1 << num2;
 
     cout << "Sum = " << sum(num1, num2);
 
