@@ -1,0 +1,27 @@
+//A program to find duplicates in array
+#include <stdio.h>
+
+int main() {
+    int size, i, j;
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+
+    int array[size];
+
+    printf("Enter %d integers:\n", size);
+    for (i = 0; i < size; i++) {
+        scanf("%d", &array[i]);
+    }
+
+    printf("Duplicates in the array are: ");
+    for (i = 0; i < size; i++) {
+        for (j = i + 1; j < size; j++) {
+            if (array[i] == array[j]) {
+                printf("%d ", array[i]);
+                break;
+            }
+        }
+    }
+
+    return 0;
+}

@@ -1,0 +1,28 @@
+//a program to find the frequency of an element
+#include <stdio.h>
+
+int main() {
+    int size, i, key, frequency = 0;
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+
+    int array[size];
+
+    printf("Enter %d integers:\n", size);
+    for (i = 0; i < size; i++) {
+        scanf("%d", &array[i]);
+    }
+
+    printf("Enter the element to find frequency: ");
+    scanf("%d", &key);
+
+    for (i = 0; i < size; i++) {
+        if (array[i] == key) {
+            frequency++;
+        }
+    }
+
+    printf("The frequency of %d is: %d\n", key, frequency);
+
+    return 0;
+}

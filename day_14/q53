@@ -1,0 +1,30 @@
+//A program to linear search
+
+#include<stdio.h>
+int main()
+{
+    int arr[100], n, key, i; // Declare an array to hold up to 100 integers, and variables for the number of elements, the key to search for, and a loop counter
+    printf("Enter the number of elements in the array: "); // Prompt the user to enter the number of elements
+    scanf("%d", &n); // Read the number of elements from the user
+
+    printf("Enter %d integers:\n", n); // Prompt the user to enter the integers
+    for(i = 0; i < n; i++) // Loop to read each integer into the array
+    {
+        scanf("%d", &arr[i]); // Read an integer and store it in the array
+    }
+
+    printf("Enter the key to search: "); // Prompt the user to enter the key to search for
+    scanf("%d", &key); // Read the key from the user
+
+    for(i = 0; i < n; i++) // Loop through the array to find the key
+    {
+        if(arr[i] == key) // Check if the current element is equal to the key
+        {
+            printf("Key found at index %d.\n", i); // If found, print the index and exit
+            return 0;
+        }
+    }
+    
+    printf("Key not found in the array.\n"); // If not found after checking all elements, print a message
+    return 0; 
+}
