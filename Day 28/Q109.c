@@ -12,7 +12,8 @@ int main() {
     printf("Enter Book ID: ");
     scanf("%d", &book.bookId);
 
-    getchar(); // Clear newline
+    getchar(); 
+    
 
     printf("Enter Book Title: ");
     fgets(book.title, sizeof(book.title), stdin);
